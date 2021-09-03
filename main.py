@@ -156,6 +156,7 @@ content_criterion = ContentLoss()
 style_criterion = StyleLoss(style_f)
 total_criterion = Totalloss()
 
+# optimize generated_image parameters (pixels)
 optimizer = optim.Adam([generated_image], lr=0.03)       
 
 results = []
@@ -165,7 +166,7 @@ results = []
 # =============================================================================
 print('==> Start Training ...')
 for i in range(1, num_iterations+1):
-    # forward pass: compute predicted image by passing noisy to the model
+    # forward pass: compute predicted image by passing noisy image to the model
     generated_f = vgg19(generated_image)     
         
     # calculate loss
@@ -185,8 +186,6 @@ for i in range(1, num_iterations+1):
     print('Iterations: {} \t c_loss: {:.3f} \t  s_Loss: {:.3f} \t Total_Loss: {:.3f}'.format(i, c_loss, s_loss, loss))
     if i % 500 == 0:
         results.append(deprocess(generated_image.detach()))
-        plt.imshow(deprocess(generated_image.detach()))
-        plt.pause(0.001)
 print('==> End of training ...')
 
 for img in results:
