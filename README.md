@@ -30,7 +30,17 @@ I extracted feauters from 5 layer to find accurate style of the style image. I'v
 In linear algebra, the gram matrix G of a set of Vectors  (V1, ..., Vn)  is the matrix of dot products. In other words, G(ij) compares how similar V(i) is to V(j). If they are highly similar, you would expect them to have a large dot product, and thus for G(ij) to be large. <br />
 Finding gram matrix or correlation between channels for each layer's features is very simple, you can see the definition in the image below:
 
+![Picture5](https://user-images.githubusercontent.com/85555218/132092473-ca71fd48-df8a-41da-ba46-e9e9c5f8ecc5.png)
 
+The formula of style-loss for just one layer and the formula of the total style-loss (sum of each layer's style-loss) can be seen below:
+
+![f1](https://user-images.githubusercontent.com/85555218/132092654-2315607b-dd60-480d-8a22-36387fd2a97f.png)
+![Screenshot (438)](https://user-images.githubusercontent.com/85555218/132092657-cdeed26f-a685-4386-bafb-cee2b4b5e92e.png)
+
+### total-loss: 
+Finally, let's create a loss function that minimizes both the style and the content cost. The formula is:
+
+![f3](https://user-images.githubusercontent.com/85555218/132093300-7e6a9d22-4e4e-43f1-9d57-f62dec63e73f.png)
 
 ## references
 L. A. Gatys, A. S. Ecker, and M. Bethge. <br />
