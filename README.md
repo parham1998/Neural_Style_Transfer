@@ -44,4 +44,4 @@ Finally, let's create a loss function that minimizes both the style and the cont
 
 ## references
 L. A. Gatys, A. S. Ecker, and M. Bethge. <br />
-*"A Neural Algorithm of Artistic Style"* (arXiv-2015)
+*"Image Style Transfer Using Convolutional Neural Networks"* (CVPR-2016)
